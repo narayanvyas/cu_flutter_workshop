@@ -1,4 +1,22 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'dart:convert';
+
+import 'package:flutter_workshop_cu/products_model.dart';
+
+Future<List<ProductsModel>> getProducts() async {
+  Dio dio = Dio();
+  List<ProductsModel> products = [];
+
+  final result = await dio.get('https://fakestoreapi.com/products');
+
+  if (result.statusCode == 200) {
+    for (var product in result.data) {
+      products.add(ProductsModel.fromJson(product));
+    }
+  }
+  return products;
+}
 
 class ProductsPage extends StatelessWidget {
   const ProductsPage({super.key});
@@ -9,6 +27,16 @@ class ProductsPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.black,
         centerTitle: true,
+        actions: [
+          IconButton(
+              onPressed: () {
+                getProducts();
+              },
+              icon: Icon(
+                Icons.electric_car_outlined,
+                color: Colors.white,
+              ))
+        ],
         title: Text(
           'Products',
           style: TextStyle(color: Colors.white),
