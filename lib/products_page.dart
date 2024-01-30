@@ -24,8 +24,16 @@ class ProductsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.black,
+          backgroundColor: Colors.red,
           centerTitle: true,
+          leading: IconButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              icon: Icon(
+                Icons.arrow_back_ios,
+                color: Colors.white,
+              )),
           actions: [
             IconButton(
                 onPressed: () {

@@ -7,6 +7,6 @@ import 'login_page.dart';
 void main() {
   runApp(MaterialApp(
     title: 'My First App',
-    home: ProductsPage(),
+    home: LoginPage(),
   ));
 }

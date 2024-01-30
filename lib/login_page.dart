@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_workshop_cu/products_page.dart';
 import 'package:lottie/lottie.dart';
 
 final TextEditingController emailController = TextEditingController();
@@ -18,9 +19,17 @@ bool validateForm() {
   }
 }
 
-void performLogin() {
+void performLogin(BuildContext context) {
   if (validateForm()) {
-    print('Login Success');
+    const String email = 'demo@gmail.com';
+    const String password = '11111';
+    if (emailController.text == email && passwordController.text == password) {
+      Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) => ProductsPage(),
+      ));
+    } else {
+      print('Wrong credentials');
+    }
   }
 }
 
@@ -62,7 +71,7 @@ class LoginPage extends StatelessWidget {
           Container(height: 30),
           ElevatedButton(
               onPressed: () {
-                performLogin();
+                performLogin(context);
               },
               child: Text('Login'))
         ],
