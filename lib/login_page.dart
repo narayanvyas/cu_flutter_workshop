@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_workshop_cu/products_page.dart';
+import '/products_page.dart';
 import 'package:lottie/lottie.dart';
 
 final TextEditingController emailController = TextEditingController();
