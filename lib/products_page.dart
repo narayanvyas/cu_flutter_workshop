@@ -1,8 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'dart:convert';
 
-import 'package:flutter_workshop_cu/products_model.dart';
+import '/products_model.dart';
 
 Future<List<ProductsModel>> getProducts() async {
   Dio dio = Dio();
