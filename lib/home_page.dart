@@ -10,6 +10,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         backgroundColor: Colors.black,
         title: Text(
           'Home Page',
@@ -17,6 +18,14 @@ class HomePage extends StatelessWidget {
             color: Colors.white,
           ),
         ),
+      ),
+      body: Column(
+        children: [
+          Text('Hello World'),
+          Image.network(
+              'https://cdn.pixabay.com/photo/2023/12/15/22/37/mountains-8451480_1280.jpg'),
+          Text('Hello World'),
+        ],
       ),
     );
   }
